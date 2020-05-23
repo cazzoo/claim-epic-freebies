@@ -18,9 +18,7 @@ jobs:
         timeout-minutes: 5 # Automatically stop after 5 minutes
 
         steps:
-            - env:
-                  PASSWORD: ${{ secrets.PASSWORD }}
-              name: Setup repo
+            - name: Setup repo
               uses: actions/checkout@v2
               with:
                   repository: "Revadike/epicgames-freebies-claimer"
