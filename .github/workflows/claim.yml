@@ -9,7 +9,7 @@ on: # When to run this workflow
 #        types: [started] # When repo owner stars this repo
 
     schedule:
-        - cron: "39 22 * * *" # Everyday at 00:00 UTC
+        - cron: "50 22 * * *" # Everyday at 00:00 UTC
 
 jobs:
     claim:
@@ -18,6 +18,8 @@ jobs:
         timeout-minutes: 5 # Automatically stop after 5 minutes
 
         steps:
+            - env:
+                  PASSWORD: ${{ secrets.PASSWORD }}
             - name: Setup repo
               uses: actions/checkout@v2
               with:
@@ -30,4 +32,4 @@ jobs:
               run: npm install
 
             - name: Get Epic Freebies
-              run: npm run start ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} 0 ${{ secrets.SECRETKEY }}
+              run: npm run start ${{ secrets.USERNAME }} "$PASSWORD" 0 ${{ secrets.SECRETKEY }}
