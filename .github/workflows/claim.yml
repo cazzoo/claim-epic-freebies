@@ -37,5 +37,5 @@ jobs:
               with:
                 to: ${{ secrets.TELEGRAM_TO }}
                 token: ${{ secrets.TELEGRAM_TOKEN }}
-                message: Hey! Your job has been trigger.
+                message: Hey! Your job has been trigger
               
