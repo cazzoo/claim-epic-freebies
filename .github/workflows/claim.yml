@@ -30,7 +30,7 @@ jobs:
               run: npm install
 
             - name: Get Epic Freebies
-              run: npm run start "${{ secrets.USERNAME }}" "${{ secrets.PASSWORD }}" "0" "${{ secrets.SECRETKEY }}"
+              run: npm run start '${{ secrets.USERNAME }}' '${{ secrets.PASSWORD }}' '0' '${{ secrets.SECRETKEY }}'
               
             - name: Telegram Notify
               uses: appleboy/telegram-action@0.0.3
